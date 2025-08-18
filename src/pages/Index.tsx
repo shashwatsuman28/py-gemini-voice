@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { ChatHeader } from "@/components/ChatHeader";
 import { ChatMessage } from "@/components/ChatMessage";
 import { ChatInput } from "@/components/ChatInput";
@@ -9,6 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 const Index = () => {
   const { messages, isLoading, sendMessage } = useChat();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (scrollAreaRef.current) {
@@ -22,7 +25,10 @@ const Index = () => {
   return (
     <div className="h-screen flex flex-col bg-chat-background">
       <ChatHeader />
-      
+      {/* Sign In button at top right */}
+      <div className="absolute top-4 right-8 z-50">
+        <Button onClick={() => navigate("/auth")}>Sign In / Sign Up</Button>
+      </div>
       <div className="flex-1 relative overflow-hidden">
         <ScrollArea ref={scrollAreaRef} className="h-full">
           <div className="max-w-4xl mx-auto px-4 py-6">
@@ -54,7 +60,6 @@ const Index = () => {
           </div>
         </ScrollArea>
       </div>
-      
       <ChatInput onSendMessage={sendMessage} isLoading={isLoading} />
     </div>
   );

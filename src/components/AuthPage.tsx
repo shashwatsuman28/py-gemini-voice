@@ -3,6 +3,8 @@ import { AuthLayout } from "./AuthLayout";
 import { LoginForm } from "./LoginForm";
 import { SignupForm } from "./SignupForm";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
 
 type AuthMode = "login" | "signup";
 
@@ -24,29 +26,24 @@ export const AuthPage = () => {
   const [mode, setMode] = useState<AuthMode>("login");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleLogin = async (data: LoginData) => {
     setIsLoading(true);
     try {
-      // TODO: Implement actual Supabase login
-      console.log("Login attempt:", { email: data.email, rememberMe: data.rememberMe });
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
+      const { email, password } = data;
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) throw error;
       toast({
         title: "Welcome back!",
         description: "You have been successfully signed in.",
       });
-      
-      // TODO: Redirect to main app
-      console.log("Login successful - redirect to main app");
-      
-    } catch (error) {
+      navigate("/");
+    } catch (error: any) {
       console.error("Login error:", error);
       toast({
         title: "Sign in failed",
-        description: "Please check your credentials and try again.",
+        description: error?.message || "Please check your credentials and try again.",
         variant: "destructive",
       });
     } finally {
@@ -57,29 +54,25 @@ export const AuthPage = () => {
   const handleSignup = async (data: SignupData) => {
     setIsLoading(true);
     try {
-      // TODO: Implement actual Supabase signup
-      console.log("Signup attempt:", { 
-        fullName: data.fullName, 
-        email: data.email,
-        acceptTerms: data.acceptTerms 
+      const { fullName, email, password } = data;
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: { fullName },
+        },
       });
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      if (error) throw error;
       toast({
         title: "Account created successfully!",
         description: "Please check your email to verify your account.",
       });
-      
-      // Switch to login mode after successful signup
       setMode("login");
-      
-    } catch (error) {
+    } catch (error: any) {
       console.error("Signup error:", error);
       toast({
         title: "Sign up failed",
-        description: "There was an error creating your account. Please try again.",
+        description: error?.message || "There was an error creating your account. Please try again.",
         variant: "destructive",
       });
     } finally {
