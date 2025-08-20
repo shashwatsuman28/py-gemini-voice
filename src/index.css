@@ -8,64 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 18 44% 86%; /* Pale Dogwood */
+    --foreground: 6 87% 9%; /* Black Bean */
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 10 49% 72%; /* Rosy Brown */
+    --card-foreground: 6 87% 9%;
 
-    --popover: 240 5% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 347 44% 49%; /* Raspberry Rose */
+    --popover-foreground: 6 87% 9%;
 
-    --primary: 265 85% 70%;
+    --primary: 348 92% 28%; /* Burgundy */
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 10 49% 72%; /* Rosy Brown */
+    --secondary-foreground: 6 87% 9%;
 
-    --muted: 240 5% 6%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 17 44% 86%; /* Pale Dogwood */
+    --muted-foreground: 347 44% 49%; /* Raspberry Rose */
 
-    --accent: 265 85% 70%;
+    --accent: 347 44% 49%; /* Raspberry Rose */
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 96% 46%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 6% 20%;
-    --input: 240 6% 20%;
-    --ring: 265 85% 70%;
+    --border: 6 87% 9%; /* Black Bean */
+    --input: 6 87% 9%;
+    --ring: 348 92% 28%; /* Burgundy */
 
     --radius: 0.75rem;
 
     /* Chat-specific design tokens */
-    --chat-background: 240 10% 3.9%;
-    --chat-surface: 240 6% 10%;
-    --chat-bubble-user: 265 85% 70%;
-    --chat-bubble-ai: 240 6% 20%;
-    --chat-input: 240 5% 6%;
-    --gradient-primary: linear-gradient(135deg, hsl(265 85% 70%), hsl(280 85% 65%));
-    --gradient-surface: linear-gradient(135deg, hsl(240 6% 10%), hsl(240 8% 12%));
-    
+    --chat-background: 18 44% 86%; /* Pale Dogwood */
+    --chat-surface: 10 49% 72%; /* Rosy Brown */
+    --chat-bubble-user: 348 92% 28%; /* Burgundy */
+    --chat-bubble-ai: 347 44% 49%; /* Raspberry Rose */
+    --chat-input: 6 87% 9%; /* Black Bean */
+    --gradient-primary: linear-gradient(135deg, hsl(348 92% 28%), hsl(347 44% 49%));
+    --gradient-surface: linear-gradient(135deg, hsl(10 49% 72%), hsl(18 44% 86%));
+
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-background: 18 44% 86%;
+    --sidebar-foreground: 6 87% 9%;
+    --sidebar-primary: 348 92% 28%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 347 44% 49%;
+    --sidebar-accent-foreground: 6 87% 9%;
+    --sidebar-border: 6 87% 9%;
+    --sidebar-ring: 348 92% 28%;
   }
 
   .dark {

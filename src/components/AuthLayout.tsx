@@ -25,7 +25,7 @@ export const AuthLayout = ({ children }: AuthLayoutProps) => {
               >
                 <Bot className="h-6 w-6 text-primary-foreground" />
               </div>
-              <h1 className="text-2xl font-bold">Gemini Chat</h1>
+              <h1 className="text-2xl font-bold">InternMate</h1>
             </div>
 
             {/* Hero Content */}
@@ -34,13 +34,12 @@ export const AuthLayout = ({ children }: AuthLayoutProps) => {
               <span 
                 className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent ml-2"
               >
-                AI Conversations
+                Intern Assistance
               </span>
             </h2>
-            
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-              Experience intelligent conversations powered by Google's advanced AI. 
-              Join thousands of users exploring the possibilities of AI assistance.
+              Experience seamless productivity with your AI-powered intern. 
+              Join thousands of users boosting their workflow with InternMate.
             </p>
 
             {/* Features */}

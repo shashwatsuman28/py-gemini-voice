@@ -10,8 +10,8 @@ export const ChatHeader = () => {
             <Bot className="h-5 w-5 text-primary-foreground" />
           </div>
           <div>
-            <h1 className="text-lg font-semibold text-foreground">Gemini Chat</h1>
-            <p className="text-sm text-muted-foreground">Powered by Google AI</p>
+            <h1 className="text-lg font-semibold text-foreground">InternMate</h1>
+            <p className="text-sm text-muted-foreground">Your AI Intern Assistant</p>
           </div>
         </div>
         

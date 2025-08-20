@@ -38,10 +38,10 @@ const Index = () => {
                   <span className="text-2xl">🤖</span>
                 </div>
                 <h2 className="text-2xl font-semibold text-foreground mb-2">
-                  Welcome to Gemini Chat
+                  Welcome to InternMate
                 </h2>
                 <p className="text-muted-foreground max-w-md">
-                  Start a conversation with Google's powerful AI assistant. Ask questions, get help, or just chat!
+                  Start a conversation with your AI intern assistant. Ask questions, get help, or just chat!
                 </p>
               </div>
             ) : (

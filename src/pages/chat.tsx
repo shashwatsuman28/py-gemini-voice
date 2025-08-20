@@ -27,16 +27,16 @@ const Chat = () => {
 
   return (
     <div className="flex flex-col items-center p-6">
-      <h1 className="text-2xl font-bold mb-4">Gemini Chatbot</h1>
+  <h1 className="text-3xl font-extrabold mb-4 text-primary animate-gradient bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transition-all duration-700">InternMate</h1>
       
-      <div className="w-full max-w-md border rounded-lg p-4 h-96 overflow-y-auto bg-gray-50 shadow">
+  <div className="w-full max-w-md border rounded-2xl p-6 h-96 overflow-y-auto bg-chat-surface shadow-lg backdrop-blur-xl transition-all duration-500">
         {messages.map((msg, idx) => (
           <div
             key={idx}
-            className={`my-2 p-2 rounded-lg ${
+            className={`my-2 p-3 rounded-2xl shadow transition-all duration-500 ${
               msg.role === "user"
-                ? "bg-blue-500 text-white self-end text-right"
-                : "bg-gray-200 text-black self-start text-left"
+                ? "bg-chat-bubble-user text-primary-foreground self-end text-right animate-slide-up"
+                : "bg-chat-bubble-ai text-foreground self-start text-left animate-slide-up"
             }`}
           >
             {msg.text}
@@ -46,13 +46,13 @@ const Chat = () => {
 
       <div className="flex w-full max-w-md mt-4">
         <input
-          className="flex-1 border p-2 rounded-l-lg"
+          className="flex-1 border border-border bg-pale_dogwood text-foreground placeholder:text-muted-foreground p-3 rounded-l-2xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type your message..."
         />
         <button
-          className="bg-blue-500 text-white px-4 rounded-r-lg"
+          className="bg-primary text-primary-foreground px-6 rounded-r-2xl font-semibold shadow hover:bg-accent transition-all duration-300"
           onClick={sendMessage}
         >
           Send
